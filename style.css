@@ -1,0 +1,16 @@
+body {
+    font-family: consolas;
+}
+
+textarea {
+    vertical-align: middle;
+    width: 67%;
+    height: calc(100vh / 3);
+}
+
+/* arrange the button to be beyond the textarea*/
+button {
+    vertical-align: middle;
+    width: 30%;
+    height: calc(100vh / 3);
+}
