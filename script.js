@@ -9,14 +9,15 @@ async function fixClicked() {
     letters = [];
     readInput();
     switchLetters();
-    await printFixedLetters();
+    printFixedLetters();
     await copyTextToClipboard();
     showSuccessMessage();
 }
 
 async function printFixedLetters() { document.getElementById("input").value = letters; }
 
-function showSuccessMessage() {
+async function showSuccessMessage() {
+    await new Promise(resolve => setTimeout(resolve, 500));
     alert("Copied de-capslocked text to clipboard! \n\n Use STRG+V to paste it.");
 }
 
@@ -45,7 +46,7 @@ function isUpperCase(letter) {
     return letter === letter.toUpperCase();
 }
 
-async function copyTextToClipboard(){
+async function copyTextToClipboard() {
     try {
         await navigator.clipboard.writeText(letters);
         console.log('Content copied to clipboard!');
