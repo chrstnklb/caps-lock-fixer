@@ -1,4 +1,4 @@
-var letters
+var letters;
 
 function emptyTextArea() {
     var input = document.getElementById("input");
@@ -26,7 +26,15 @@ function readInput() {
     letters = input.value.split("");
 }
 
-function switchLetters() {
+function switchLetters(text) {
+    if (typeof text === "string") {
+        var arr = text.split("");
+        for (var i = 0; i < arr.length; i++) {
+            arr[i] = checkLetter(arr[i]);
+        }
+        return arr.join("");
+    }
+
     for (var i = 0; i < letters.length; i++) {
         letters[i] = checkLetter(letters[i]);
     }
@@ -53,4 +61,8 @@ async function copyTextToClipboard() {
     } catch (err) {
         console.error('Failed to copy: ', err);
     }
+}
+
+if (typeof module !== 'undefined') {
+    module.exports = { switchLetters };
 }
