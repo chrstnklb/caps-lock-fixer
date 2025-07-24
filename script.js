@@ -1,4 +1,4 @@
-var letters
+var letters;
 
 function emptyTextArea() {
     var input = document.getElementById("input");
