@@ -1,4 +1,4 @@
-/*let us centralize every element inside body element*/
+/* Center all elements inside the body */
 body {
     display: flex;
     flex-direction: column;
